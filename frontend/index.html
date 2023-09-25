@@ -10,17 +10,41 @@
     <main id="mainContent">
         <nav class="navBar">
             <div class="logo-nav"><h1>Super Chat</h1></div>
+            <div class="user">
+                <input autofocus placeholder="USUÁRIO" type="text" name="userName" id="userName" class="userName">
+            </div>
+            <div class="role"><h2>Games</h2></div>
+            <div class="salasContainer">
+                <select name="salas" id="salas" class="salas">
+                    <option value="salas">Salas</option>
+                    <option value="games">Games</option>
+                    <option value="tec">Tecnologia</option>
+                    <option value="geral">Geral</option>
+                </select>
+            </div>
+            <div class="chatsCount">Grupos: 0</div>
             <section class="chats">
                 <div class="chat">
-                    <div class="members-count">0</div>
+                    <div class="members-count">Membros: 0</div>
                     <div class="chatName">League of Legends</div>
-                    <button class="join-chat">Join Chat</button>
+                    <button class="join-chat">Entre</button>
+                </div>
+                <div class="chat">
+                    <div class="members-count">Membros: 0</div>
+                    <div class="chatName">League of Legends</div>
+                    <button class="join-chat">Entre</button>
                 </div>
             </section>
         </nav>
         <section class="userArea">
-            <section class="userCreate"></section>
-            <section class="userContent"></section>
+            <section class="topBar"></section>
+            <section class="userContent">
+                <div class="messages"></div>
+                <div class="sendMessage">
+                    <input autofocus type="text" name="message" id="message">
+                    <button class="send">Enviar</button>
+                </div>
+            </section>
         </section>
     </main>
 </body>

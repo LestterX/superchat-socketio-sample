@@ -1,15 +1,19 @@
+@import url('./variables.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {}
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 #mainContent {
-    border: 1px blue solid;
     width: 100vw;
     max-width: 1200px;
+    min-width: 900px;
     height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -17,28 +21,126 @@ body {}
     position: relative;
 }
 
-.logo {
-    background-color: aqua;
-}
-.logo h1 {
-    color: white;
-    font-size: 2.32rem;
-}
 
 .navBar {
-    border: 1px red solid;
     width: 20%;
     max-width: 256px;
     height: 100vh;
     position: fixed;
 }
+.navBar .logo-nav {
+    background-color: var(--background-color-1);
+    width: 90%;
+    margin: 15px auto;
+    color: rgb(0, 0, 0);
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 20px 20px 0 0;
+    font-weight: 900;
+}
+.navBar .user {
+    width: 90%;
+    height: 25px;
+    margin: 0 auto;
+}
+.navBar .user .userName {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+}
+.navBar .user .userName::placeholder {
+ text-align: center;
+}
+.navBar .role {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 5px;
+}
+.navBar .salasContainer {
+    width: 90%;
+    margin: 5px auto;
+}
+.navBar .salas {
+    width: 100%;
+    text-align: center;
+    font-size: 1.15rem;
+}
+.navBar .chatsCount {
+    font-size: 1.05rem;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px #000 solid;
+}
+.navBar .chats {
+    margin: 15px 0;
+}
+.navBar .chat {
+    width: 90%;
+    margin: 10px auto;
+    background-color: var(--background-color-2);
+    border-radius: 20px 0 20px 0;
+    padding: 5px 0;
+}
+.navBar .chat .members-count {
+    width: 95%;
+    margin: 0 5px;
+    text-align: right;
+    font-size: 1rem;
+}
+.navBar .chat .chatName {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+.navBar .chat .join-chat {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 0 0 15px 0;
+    padding: 3px;
+}
+
 
 .userArea {
-    border: 1px green solid;
     width: 80%;
     max-width: 944px;
+    min-width: 715px;
     height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
+}
+.userArea .topBar {
+    width: 100%;
+    height: 60px;
+    background-color: var(--background-color-1);
+}
+.userArea .userContent {
+    width: 100%;
+    height: calc(100% - 60px);
+    position: relative;
+}
+.userArea .userContent .messages{
+    width: 100%;
+    height: auto;
+    max-height: calc(100% -120px);
+}
+.userArea .userContent .sendMessage{
+    background-color: var(--background-color-2);
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+}
+.userArea .userContent .sendMessage input {
+    width: 89%;
+    height: 30px;
+}
+.userArea .userContent .sendMessage .send {
+    width: 9%;
+    height: 30px;
 }
