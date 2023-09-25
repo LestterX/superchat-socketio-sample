@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {}
+
+#mainContent {
+    border: 1px blue solid;
+    width: 100vw;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.logo {
+    background-color: aqua;
+}
+.logo h1 {
+    color: white;
+    font-size: 2.32rem;
+}
+
+.navBar {
+    border: 1px red solid;
+    width: 20%;
+    max-width: 256px;
+    height: 100vh;
+    position: fixed;
+}
+
+.userArea {
+    border: 1px green solid;
+    width: 80%;
+    max-width: 944px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
