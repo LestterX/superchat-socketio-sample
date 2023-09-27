@@ -17,6 +17,8 @@ model Chat {
   messages Message[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([role])
 }
 
 model Message {
