@@ -1,0 +1,43 @@
+.newChatModal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color-2_03);
+}
+.newChatModal .closeNewChatBnt {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    width: 25px;
+    height: 25px;
+}
+.newChatModal form {
+    position: relative;
+    padding: 20px;
+    max-width: 300px;
+    background-color: var(--background-color-1);
+}
+.newChatModal form h3 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 5px 0 30px 0;
+    background-color: var(--background-color-2);
+    padding: 5px;
+}
+.newChatModal .chatName,
+.newChatModal .salasNewChatModal,
+.newChatModal .createNewChatBnt  {
+    width: 100%;
+    font-size: 1.25rem;
+    height: 30px;
+    margin: 5px 0;
+}
+.newChatModal .createNewChatBnt {
+    cursor: pointer;
+}

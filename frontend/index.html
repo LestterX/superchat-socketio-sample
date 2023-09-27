@@ -24,6 +24,7 @@
             </div>
             <div class="chatsCount">Grupos: 0</div>
             <section class="chats">
+                <div class="newChatBnt"><span class="newChatBntName">NOVO GRUPO</span></div>
                 <div class="chat">
                     <div class="members-count">Membros: 0</div>
                     <div class="chatName">League of Legends</div>
@@ -47,5 +48,20 @@
             </section>
         </section>
     </main>
+    <div class="newChatModal">
+        <form action="">
+            <h3>NOVO GRUPO</h3>
+            <input type="text" name="chatName" id="chatName" class="chatName">
+            <select name="salasNewChatModal" id="salasNewChatModal" class="salasNewChatModal">
+                <option value="salas">Salas</option>
+                <option value="games">Games</option>
+                <option value="tec">Tecnologia</option>
+                <option value="geral">Geral</option>
+            </select>
+            <button class="createNewChatBnt" type="button">CRIAR</button>
+            <div class="closeNewChatBnt"></div>
+        </form>
+    </div>
+    <script src="./assets/js/modal.js"></script>
 </body>
 </html>

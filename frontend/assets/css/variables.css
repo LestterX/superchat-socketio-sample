@@ -1,4 +1,5 @@
 :root {
-    --background-color-1: #6c6fff;
-    --background-color-2: #b7b9ff;
+    --background-color-1: rgb(108, 111, 255);
+    --background-color-2: rgb(183, 185, 255, 0.3);
+    --background-color-2_03: rgb(183, 185, 255, 0.3);
 }
