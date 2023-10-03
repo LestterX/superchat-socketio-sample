@@ -17,5 +17,6 @@ app.use(express.static(path.resolve(__dirname, '..', '..', 'public')))
 app.use(routes)
 
 const serverHTTP = createServer(app)
+import './websocket/index'
 
 export { serverHTTP }

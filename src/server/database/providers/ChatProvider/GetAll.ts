@@ -9,11 +9,9 @@ export const getAll = async (limit: number = 10, page: number = 1): Promise<Erro
             take: 10,
             include: {messages: true}
         })
-        console.log(allChats);
         
         return allChats
     } catch (error) {
-        console.log(error);
         return new Error('Erro ao consultar registros')
     }
 

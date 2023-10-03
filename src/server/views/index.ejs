@@ -22,23 +22,24 @@
                     <option value="geral">Geral</option>
                 </select>
             </div>
-            <div class="chatsCount">Grupos: 0</div>
+            <div class="chatsCount">Grupos: <%= chats.length %></div>
             <section class="chats">
                 <div class="newChatBnt"><span class="newChatBntName">NOVO GRUPO</span></div>
-                <div class="chat">
-                    <div class="members-count">Membros: 0</div>
-                    <div class="chatName">League of Legends</div>
-                    <button class="join-chat">Entre</button>
-                </div>
-                <div class="chat">
-                    <div class="members-count">Membros: 0</div>
-                    <div class="chatName">League of Legends</div>
-                    <button class="join-chat">Entre</button>
-                </div>
+
+                <% if (chats) { %>
+                    <% chats.forEach(chat => { %>
+                        <div class="chat">
+                            <div class="members-count">Membros: 0</div>
+                            <div class="chatName"><%= chat.name %></div>
+                            <button onclick="goToChat('<%=chat.id%>')" class="join-chat">Entre</button>
+                        </div>
+                    <% }) %>
+                <% } %>
+
             </section>
         </nav>
         <section class="userArea">
-            <section class="topBar"></section>
+            <section class="topBar"><h3 class="" style="text-align: center;"></h3></section>
             <section class="userContent">
                 <div class="messages"></div>
                 <div class="sendMessage">
@@ -64,5 +65,6 @@
     </div>
     <script src="./js/modal.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/sockets.js"></script>
 </body>
 </html>
