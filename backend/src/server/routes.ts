@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { StatusCodes } from "http-status-codes";
-import { createProvider, getByRoleProvider } from "./ChatProvider";
+import { createProvider, getByRoleProvider, getAllProvider } from "./ChatProvider";
 
 const routes = Router();
 
@@ -14,6 +14,11 @@ routes.get('/chat/:role', async (req, res) => {
     const chats = await getByRoleProvider.getByRole(role)
     console.log(chats);
     res.status(StatusCodes.OK).json(chats)
+})
+routes.get('/chat', async (req, res) => {
+    const chats = await getAllProvider.getAll(Number(req.query.limit), Number(req.query.page))
+    if(chats instanceof Error) return res.status(StatusCodes.BAD_REQUEST).json({error: chats.message})
+    return res.status(StatusCodes.OK).json({chats})
 })
 routes.post('/chat', async (req, res) => {
     const chatData = req.body

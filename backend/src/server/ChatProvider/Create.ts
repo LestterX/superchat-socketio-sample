@@ -1,7 +1,12 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient();
 
-export const create = async (chat: any) => {
+interface IChat {
+    nome: string,
+    role: string,
+}
+
+export const create = async (chat: IChat) => {
 
     try {
         const newChat = await prisma.chat.create({
