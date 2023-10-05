@@ -3,6 +3,7 @@ import * as getByRoleProvider from './GetByRole'
 import * as getAllProvider from './GetAll'
 import * as getByIdProvider from './GetById'
 import * as getNameByIdProvider from './GetNameById'
+import * as CreateMessageProvider from './CreateMessage'
 
 export const ChatProvider = {
     ...createProvider,
@@ -10,4 +11,5 @@ export const ChatProvider = {
     ...getAllProvider,
     ...getByIdProvider,
     ...getNameByIdProvider,
+    ...CreateMessageProvider,
 }
