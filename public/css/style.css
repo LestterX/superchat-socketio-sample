@@ -27,7 +27,6 @@ body {
     width: 20%;
     max-width: 256px;
     height: 100vh;
-    position: fixed;
 }
 .navBar .logo-nav {
     background-color: var(--background-color-1);

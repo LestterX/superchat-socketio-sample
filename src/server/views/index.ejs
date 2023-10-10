@@ -24,12 +24,12 @@
             </div>
             <div class="chatsCount">Grupos: <%= chats.length %></div>
             <section class="chats">
-                <div class="newChatBnt"><span class="newChatBntName">NOVO GRUPO</span></div>
+                <!-- <div class="newChatBnt"><span class="newChatBntName">NOVO GRUPO</span></div> -->
 
                 <% if (chats) { %>
                     <% chats.forEach(chat => { %>
                         <div class="chat">
-                            <div class="members-count">Membros: 0</div>
+                            <!-- <div class="members-count">Membros: 0</div> -->
                             <div class="chatName"><%= chat.name %></div>
                             <button onclick="goToChat('<%=chat.id%>')" class="join-chat">Entre</button>
                         </div>

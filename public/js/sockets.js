@@ -10,6 +10,26 @@ const goToChat = (chatId) => {
     if (chatNameTop.textContent === '') oldChat = undefined
     socket.emit('join chat', chatId, userName.value, oldChat)
 }
+const createGroupBouble = (groupName, chatId = undefined) => {
+    let chat = document.createElement('div')
+    chat.classList.add('chat')
+
+    let chatName = document.createElement('div')
+    chatName.classList.add('chatName')
+    chatName.textContent = groupName
+    chat.appendChild(chatName)
+
+    let joinChat = document.createElement('button')
+    joinChat.classList.add('join-chat')
+    joinChat.textContent = 'Entre'
+    joinChat.addEventListener('click', () => goToChat(chatId))
+    chat.appendChild(joinChat)
+
+    return chat
+}
+// let chats = document.querySelector('.chats')
+// chats.appendChild(createGroupBouble('testeeeeeeeeaaa'))
+
 
 const messageInput = document.querySelector('#message')
 messageInput.addEventListener('keypress', (e) => {
@@ -39,6 +59,9 @@ const addMessageSection = (message) => {
     msg.innerHTML = message
     msgSection.appendChild(msg)
 }
+
+
+
 socket.on('create message', message => {
     addMessageSection(message)
 })
