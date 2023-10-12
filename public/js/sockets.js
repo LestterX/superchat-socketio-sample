@@ -1,7 +1,15 @@
-const socket = io()
+const socket = io() //FOI ADD NO index.ejs || SCRIPT ACIMA DESTE
+
 const joinChat = document.querySelector('.join-chat')
 let chatNameTop = document.querySelector('.topBar').children[0]
 const sendBnt = document.querySelector('.send')
+
+const salasOptions = document.querySelector('.salas')
+salasOptions.addEventListener('change', (e) => {
+    const options = ['/', '/games', '/tecnology', '/geral']
+    let option = salasOptions.selectedIndex
+    window.location.href = options[option]
+})
 
 const goToChat = (chatId) => {
     let userName = document.querySelector('.userName')
@@ -60,8 +68,6 @@ const addMessageSection = (message) => {
     msgSection.appendChild(msg)
 }
 
-
-
 socket.on('create message', message => {
     addMessageSection(message)
 })
@@ -94,4 +100,6 @@ socket.on('user join leave chat', (userName, join) => {
     userJoinChat.innerHTML = joinLeaveMsg
     msgSection.appendChild(userJoinChat)
 })
+
+namespace.on('namespace notification', (msg) => {alert(msg)})
 

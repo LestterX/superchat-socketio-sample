@@ -8,5 +8,7 @@ export const gamesController = async (req: Request, res: Response) => {
 
     return res.status(StatusCodes.OK).render('index', {
         chats: chats,
+        room: 'Games',
+        namespace: '/games'
     })
 }

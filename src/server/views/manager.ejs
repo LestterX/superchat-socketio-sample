@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperChat || <%=titleComplement%></title>
+</head>
+<body>
+
+    <h1>Management System</h1>
+    <input type="text" class="textInput" placeholder="Mensagem para Envio" autofocus>
+    <button class="sendGames" type="button">Enviar para Games</button>
+    <button class="sendGeral" type="button">Enviar para Geral</button>
+    <button class="sendTecnologia" type="button">Enviar para Tecnologia</button>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io('/manager')
+        const textInput = document.querySelector('.textInput')
+
+        const sendGames = document.querySelector('.sendGames').addEventListener('click', (e) => {
+            let msg = textInput.value
+            if(msg.length < 1) return alert('Digite a mensagem')
+            console.log(`games ${msg}`);
+            emitGames(msg)
+        })
+        const sendGeral = document.querySelector('.sendGeral').addEventListener('click', (e) => {
+            let msg = textInput.value
+            if(msg.length < 1) return alert('Digite a mensagem')
+            console.log(`geral ${msg}`);
+            emitGeral(msg)
+        })
+        const sendTecnologia = document.querySelector('.sendTecnologia').addEventListener('click', (e) => {
+            let msg = textInput.value
+            if(msg.length < 1) return alert('Digite a mensagem')
+            console.log(`tec ${msg}`);
+            emitTecnologia(msg)
+        })
+
+        const emitGames = (msg) => {
+            socket.emit('games namespace', msg)
+        }
+        const emitGeral = (msg) => {
+            socket.emit('geral namespace', msg)
+        }
+        const emitTecnologia = (msg) => {
+            socket.emit('tecnologia namespace', msg)
+        }
+
+    </script>
+</body>
+</html>

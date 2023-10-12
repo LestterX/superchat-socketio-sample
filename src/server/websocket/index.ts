@@ -7,6 +7,7 @@ const io = new Server(serverHTTP, {
     cors: {
         origin: ['*']
     },
+    
 })
 
 
@@ -33,7 +34,7 @@ io.on('connection', (socket) => {
         if (!message) message = '<i>Mensagem em inválida</i>'
         const newMessage: INewMessage = { chatId, message }
         console.log(`-----------${newMessage.chatId}------------`);
-        if(newMessage.chatId) {
+        if (newMessage.chatId) {
             let messageResult = await ChatProvider.createMessage(newMessage)
             console.log(messageResult);
         }
@@ -49,4 +50,33 @@ io.on('connection', (socket) => {
         console.log(message);
 
     })
+})
+
+io.of('/manager').on('connection', (socket) => {
+    console.log('Manager');
+    socket.on('games namespace', (msg) => {
+        console.log(msg + '1');
+        io.of('/games').emit('namespace notification', msg)
+    })
+    socket.on('geral namespace', (msg) => {
+        console.log(msg + '2');
+        io.of('/geral').emit('namespace notification', msg)
+    })
+    socket.on('tecnologia namespace', (msg) => {
+        console.log(msg + '3');
+        io.of('/tecnology').emit('namespace notification', msg)
+    })
+
+})
+
+io.of('/games').on('connection', (socket) => {
+    console.log('games');
+})
+
+io.of('/tecnology').on('connection', (socket) => {
+    console.log('tecnology');
+})
+
+io.of('/geral').on('connection', (socket) => {
+    console.log('geral');
 })

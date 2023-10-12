@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="./css/style.css">
-    <title>SuperChat</title>
+    <title>SuperChat ||<%= room %></title>
 </head>
 <body>
     <main id="mainContent">
@@ -13,7 +14,7 @@
             <div class="user">
                 <input autofocus placeholder="USUÁRIO" type="text" name="userName" id="userName" class="userName">
             </div>
-            <div class="role"><h2>Games</h2></div>
+            <div class="role"><h2><%= room %></h2></div>
             <div class="salasContainer">
                 <select name="salas" id="salas" class="salas">
                     <option value="salas">Salas</option>
@@ -65,6 +66,8 @@
     </div>
     <script src="./js/modal.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+
+    <script> const namespace = io('<%=namespace%>') </script>
     <script src="./js/sockets.js"></script>
 </body>
 </html>
